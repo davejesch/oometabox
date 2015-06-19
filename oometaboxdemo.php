@@ -69,20 +69,20 @@ class DemoMetaBox extends SpectrOMMetaBox
 	public function output_metabox($post)
 	{
 		$img = get_post_meta($post->ID, self::META_KEY, TRUE);
-		
+
 		_e('Image: ', 'oometaboxdemo');
 		echo '<input type="text" id="oomb_image" name="oomb_image" size="75" value="', esc_url($img), '" />', PHP_EOL;
 		echo '<input type="button" id="oomb_upload_image" value="', __('Media Library Image', 'oometaboxdemo'),
 			'" class="button-secondary" />', PHP_EOL;
 		echo '<br />';
 		_e(' Enter an image URL or use an image from the Media Library', 'oometaboxdemo');
-		
+
 		// only enqueue the scripts when the metabox is drawn
 		$this->enqueue_scripts();
 	}
 
 	/**
-	 * Regusters the scripts and styles that the metabox uses
+	 * Registers the scripts and styles that the metabox uses
 	 * @param type $page
 	 */
 	public function admin_scripts($page)
